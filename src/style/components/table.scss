@@ -1,9 +1,17 @@
 .app-table {
-  background-color: red;
-
   thead {
     tr {
       background-color: grey;
+      td {
+        border: 1px solid grey;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        border: 1px solid grey;
+      }
     }
   }
 }

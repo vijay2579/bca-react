@@ -1,6 +1,9 @@
-import List from "./List";
+export default function Table(props) {
+  let { data } = props;
 
-export default function Table() {
+  function fnClicked(result) {
+    console.log(result);
+  }
   return (
     <>
       <table className="app-table">
@@ -8,20 +11,28 @@ export default function Table() {
           <tr>
             <td>Name</td>
             <td>Value</td>
+            <td>Action</td>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Orange</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>Apple</td>
-            <td>2</td>
-          </tr>
+          {data.map((childObj, i) => {
+            if (childObj.display) {
+              return (
+                <tr>
+                  <td>{childObj.name}</td>
+                  <td>{childObj.value}</td>
+                  <td>
+                    <button onClick={() => fnClicked(childObj)}>
+                      {childObj.buttonValue}
+                    </button>
+                  </td>
+                </tr>
+              );
+            }
+            return;
+          })}
         </tbody>
       </table>
-      <List />
       <br />
       <br />
       <br />

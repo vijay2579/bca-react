@@ -1,5 +1,3 @@
-@import url("./components/list.scss");
-@import url("./components/table.scss");
 
 * {
   margin: 0;
@@ -9,3 +7,10 @@
 ul {
   list-style: none;
 }
+
+@import url("./components/list.scss");
+@import url("./components/table.scss");
+@import url("./components//navigation.scss");
+@import url("./components/header-img.scss");
+@import url("./components/content.scss");
+@import url("./components/popup.scss");
