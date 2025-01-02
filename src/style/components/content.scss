@@ -1,7 +1,18 @@
+@mixin button-style() {
+  height: 30px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border: none;
+  background-color: green;
+  color: #FFFFFF;
+}
+
 .content {
   padding: 15px;
   ul {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     li {
       width: 200px;
@@ -9,14 +20,26 @@
       position: relative;
       background-color: #E5E4E2;
       .product {
-        button {
-          position: absolute;
+        .text {
+          padding: 10px;
+          text-align: center;
+          h4 {
+            font-size: 14px;
+          }
+          p {
+            margin-top: 10px;
+            font-size: 12px;
+            height: 50px;
+            overflow-y: scroll;
+          }
+        }
+        .add-to-cart {
           bottom: 0;
-          width: 100%;
-          height: 30px;
-          border: none;
-          background-color: green;
-          color: #FFFFFF;
+          @include button-style;
+        }
+        .view-product {
+          bottom: 36px;
+          @include button-style;
         }
       }
     }
